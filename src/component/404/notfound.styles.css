@@ -1,0 +1,188 @@
+@keyframes rotation {
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+#planet_1 {
+  animation: rotation;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  /* 아래의 두 코드가 없으면 별이 웹페이지 0, 0을 기준으로 회전, 따라서 회전의 중점을 지정*/
+  transform-box: fill-box;
+  transform-origin: center;
+  animation-timing-function: linear;
+}
+#planet_2 {
+  animation: rotation;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  /* 아래의 두 코드가 없으면 별이 웹페이지 0, 0을 기준으로 회전, 따라서 회전의 중점을 지정*/
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes shrinkAndGrow {
+  0% {
+    transform: scale(0);
+  }
+  25% {
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(0);
+  }
+  75% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+#star_1 {
+  animation: shrinkAndGrow;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  /* 아래의 두 코드가 없으면 별이 웹페이지 0, 0을 기준으로 회전, 따라서 회전의 중점을 지정*/
+  transform-box: fill-box;
+  transform-origin: center;
+}
+#star_2 {
+  animation: shrinkAndGrow;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+#star_3 {
+  animation: shrinkAndGrow;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+#star_4 {
+  animation: shrinkAndGrow;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+#star_5 {
+  animation: shrinkAndGrow;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+#star_6 {
+  animation: shrinkAndGrow;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+#star_7 {
+  animation: shrinkAndGrow;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+#star_8 {
+  animation: shrinkAndGrow;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+#star_9 {
+  animation: shrinkAndGrow;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes expandingHorizontal {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+#UFO-beam {
+  animation: expandingHorizontal;
+  animation-duration: 3s;
+
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes appearFromBottom {
+  from {
+    transform: translateY(1000px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+#number-0 {
+  animation: appearFromBottom;
+  animation-duration: 3s;
+}
+
+@keyframes shakingUpAndDown {
+  from {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(5px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  75% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+#alien_hand-R,
+#alien_hand-L {
+  animation: shakingUpAndDown;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes soaking {
+  to {
+    transform: translateY(-250px) scale(0);
+  }
+}
+
+#number-0-soaking {
+  animation: soaking;
+  animation-duration: 2s;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes shrinkHorizontal {
+  to {
+    transform: scaleX(0);
+  }
+}
+
+#UFO-beam-disappearing {
+  animation: shrinkHorizontal;
+  animation-duration: 2s;
+  transform-box: fill-box;
+  transform-origin: center;
+}

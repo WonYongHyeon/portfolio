@@ -124,6 +124,7 @@ export default function Skill() {
   };
 
   useEffect(() => {
+    if (!canvasRef) return;
     const canvas = canvasRef.current;
 
     const cw = 1000;

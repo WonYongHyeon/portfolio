@@ -204,7 +204,7 @@ export default function Skill() {
           gravityPower * Math.sin((Math.PI / 180) * gravityDeg);
       });
     }
-  }, []);
+  }, [canvasRef]);
 
   return (
     <SkillUI

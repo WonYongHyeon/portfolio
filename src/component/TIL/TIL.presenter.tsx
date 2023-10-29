@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import * as S from "./TIL.styles";
 import { ChangeEventHandler } from "react";
+import Lens from "../../assets/lens.svg";
 
 interface Props {
   tilData: Array<{
@@ -35,16 +36,24 @@ export default function TILUI(props: Props) {
             );
           })}
       </S.ListWrapper>
-      {props.searchVisible && (
+      <S.PaginationSearchWrapper>
+        <S.PaginationWrapper>1 2 3 4</S.PaginationWrapper>
         <S.SearchWrapper>
-          <S.SearchInput
-            name="search"
-            onChange={props.onChange}
-          ></S.SearchInput>
-          <button onClick={props.onClickSearch}>검색</button>
+          {props.searchVisible && (
+            <S.SearchBoxWrapper onSubmit={props.onClickSearch}>
+              <S.SearchInput
+                type="search"
+                name="search"
+                onChange={props.onChange}
+              ></S.SearchInput>
+              <S.SearchButton type="button" onClick={props.onClickSearch}>
+                검색
+              </S.SearchButton>
+            </S.SearchBoxWrapper>
+          )}
+          <S.LensImg src={Lens} onClick={props.onClickSearchImg} />
         </S.SearchWrapper>
-      )}
-      <S.LensImg src="/src/assets/lens.svg" onClick={props.onClickSearchImg} />
+      </S.PaginationSearchWrapper>
     </S.Body>
   );
 }

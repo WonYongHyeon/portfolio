@@ -1,6 +1,6 @@
 import axios from "axios";
 import TILUI from "./TIL.presenter";
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { debounce } from "lodash";
 
 export default function TIL() {
@@ -45,6 +45,12 @@ export default function TIL() {
     setSearchVisible(!searchVisible);
   };
 
+  const submitHandler = (e: FormEvent<HTMLFormElement>) => {
+    //1. 페이지 리로드 방지
+    e.preventDefault();
+    onClickSearch();
+  };
+
   useEffect(() => {
     axios
       .get("http://localhost:3002/TIL")
@@ -64,6 +70,7 @@ export default function TIL() {
       onChange={onChange}
       onClickSearch={onClickSearch}
       onClickSearchImg={onClickSearchImg}
+      submitHandler={submitHandler}
     />
   );
 }

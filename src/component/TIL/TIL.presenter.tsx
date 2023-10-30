@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import * as S from "./TIL.styles";
-import { ChangeEventHandler } from "react";
+import { ChangeEventHandler, FormEvent } from "react";
 import Lens from "../../assets/lens.svg";
 
 interface Props {
@@ -14,6 +14,7 @@ interface Props {
   onChange: ChangeEventHandler<HTMLInputElement>;
   onClickSearch: () => void;
   onClickSearchImg: () => void;
+  submitHandler: (event: FormEvent<HTMLFormElement>) => void;
 }
 
 export default function TILUI(props: Props) {
@@ -40,7 +41,7 @@ export default function TILUI(props: Props) {
         <S.PaginationWrapper>1 2 3 4</S.PaginationWrapper>
         <S.SearchWrapper>
           {props.searchVisible && (
-            <S.SearchBoxWrapper onSubmit={props.onClickSearch}>
+            <S.SearchBoxWrapper onSubmit={props.submitHandler}>
               <S.SearchInput
                 type="search"
                 name="search"

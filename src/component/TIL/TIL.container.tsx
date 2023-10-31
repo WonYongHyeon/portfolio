@@ -4,6 +4,7 @@ import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { debounce } from "lodash";
 
 export default function TIL() {
+  const [page, setPage] = useState<number>(1);
   const [tilData, setTilData] = useState(
     Array<{
       order: string;
@@ -31,7 +32,9 @@ export default function TIL() {
 
   const onClickSearch = () => {
     axios
-      .get("http://localhost:3002/TIL?search=" + inputs.search)
+      .get(
+        "http://localhost:3002/TIL?page=" + page + "&search=" + inputs.search
+      )
       .then(function (response) {
         setTilData(response.data);
       })
@@ -46,14 +49,18 @@ export default function TIL() {
   };
 
   const submitHandler = (e: FormEvent<HTMLFormElement>) => {
-    //1. 페이지 리로드 방지
+    //페이지 리로드 방지 및 엔터 시 검색 버튼 활성화
     e.preventDefault();
     onClickSearch();
   };
 
+  const onClickPage = () => {
+    setPage(2);
+  };
+
   useEffect(() => {
     axios
-      .get("http://localhost:3002/TIL")
+      .get("http://localhost:3002/TIL?page=" + page)
       .then(function (response) {
         setTilData(response.data);
       })
@@ -61,6 +68,7 @@ export default function TIL() {
         console.log(error);
       })
       .finally(function () {});
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -70,6 +78,7 @@ export default function TIL() {
       onChange={onChange}
       onClickSearch={onClickSearch}
       onClickSearchImg={onClickSearchImg}
+      onClickPage={onClickPage}
       submitHandler={submitHandler}
     />
   );

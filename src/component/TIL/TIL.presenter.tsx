@@ -14,6 +14,7 @@ interface Props {
   onChange: ChangeEventHandler<HTMLInputElement>;
   onClickSearch: () => void;
   onClickSearchImg: () => void;
+  onClickPage: () => void;
   submitHandler: (event: FormEvent<HTMLFormElement>) => void;
 }
 
@@ -38,7 +39,10 @@ export default function TILUI(props: Props) {
           })}
       </S.ListWrapper>
       <S.PaginationSearchWrapper>
-        <S.PaginationWrapper>1 2 3 4</S.PaginationWrapper>
+        <S.PaginationWrapper>
+          <S.Page onClick={props.onClickPage}>1</S.Page>
+          <S.Page onClick={props.onClickPage}>2</S.Page>
+        </S.PaginationWrapper>
         <S.SearchWrapper>
           {props.searchVisible && (
             <S.SearchBoxWrapper onSubmit={props.submitHandler}>

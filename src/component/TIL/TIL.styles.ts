@@ -48,9 +48,16 @@ export const PaginationSearchWrapper = styled.div`
   margin-top: 2rem;
 `;
 
-export const PaginationWrapper = styled.div`
+export const PaginationWrapper = styled.ul`
   display: flex;
   width: 5rem;
+  gap: 1rem;
+`;
+
+export const Page = styled.ul`
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export const SearchWrapper = styled.div`

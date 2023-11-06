@@ -92,7 +92,7 @@ export const SearchButton = styled.button`
   color: white;
 `;
 
-export const LensImg = styled.img`
+export const Img = styled.img`
   width: 2rem;
   height: 2rem;
   margin-left: 2rem;

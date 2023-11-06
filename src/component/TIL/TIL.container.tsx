@@ -5,7 +5,8 @@ import { debounce } from "lodash";
 
 export default function TIL() {
   const [page, setPage] = useState<number>(1);
-  const [tilData, setTilData] = useState(
+  const [pageLength, setPageLength] = useState(0);
+  const [tilList, setTilList] = useState(
     Array<{
       order: string;
       title: string;
@@ -31,17 +32,7 @@ export default function TIL() {
   }, 300);
 
   const onClickSearch = () => {
-    axios
-      .get(
-        "http://localhost:3002/TIL?page=" + page + "&search=" + inputs.search
-      )
-      .then(function (response) {
-        setTilData(response.data);
-      })
-      .catch(function (error) {
-        console.log(error);
-      })
-      .finally(function () {});
+    getTilList(page, inputs.search);
   };
 
   const onClickSearchImg = () => {
@@ -54,27 +45,36 @@ export default function TIL() {
     onClickSearch();
   };
 
-  const onClickPage = () => {
-    setPage(2);
+  const onClickPage = (event) => {
+    const selectedPage = event.currentTarget.textContent;
+
+    setPage(selectedPage);
+    getTilList(selectedPage, inputs.search);
   };
 
-  useEffect(() => {
+  const getTilList = (page: number, search: string) => {
     axios
-      .get("http://localhost:3002/TIL?page=" + page)
+      .get("http://localhost:3002/TIL?page=" + page + "&search=" + search)
       .then(function (response) {
-        setTilData(response.data);
+        setTilList(response.data.tilList);
+        setPageLength(response.data.pageLength);
       })
       .catch(function (error) {
         console.log(error);
       })
       .finally(function () {});
+  };
+
+  useEffect(() => {
+    getTilList(page, inputs.search);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <TILUI
-      tilData={tilData}
+      tilList={tilList}
       searchVisible={searchVisible}
+      pageLength={pageLength}
       onChange={onChange}
       onClickSearch={onClickSearch}
       onClickSearchImg={onClickSearchImg}

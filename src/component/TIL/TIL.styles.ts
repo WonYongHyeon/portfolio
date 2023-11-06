@@ -5,6 +5,7 @@ export const Body = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  min-height: calc(100vh - 11rem);
 `;
 
 export const ListWrapper = styled.div`
@@ -21,7 +22,6 @@ export const List = styled.div`
   padding: 1rem;
   border-radius: 2rem;
   width: 200px;
-  /* height: 300px; */
   display: flex;
   flex-direction: column;
   gap: 2rem;

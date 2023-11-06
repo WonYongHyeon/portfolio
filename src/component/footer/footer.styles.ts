@@ -9,8 +9,6 @@ export const Body = styled.div`
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  /* position: absolute; */
-  bottom: 0;
 `;
 
 export const Wrapper = styled.div`

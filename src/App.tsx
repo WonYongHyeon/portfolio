@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./style/index.css";
 import Project from "./component/project/project.container";
 import TIL from "./component/TIL/TIL.container";
+import Registration from "./component/registration/registration.container";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Introduce />}></Route>
             <Route path="/TIL" element={<TIL />}></Route>
+            <Route path="/TIL/registration" element={<Registration />}></Route>
             <Route path="/skill" element={<Skill />}></Route>
             <Route path="/project" element={<Project />}></Route>
             <Route path="/*" element={<NotFound />}></Route>

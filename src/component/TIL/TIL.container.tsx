@@ -32,7 +32,8 @@ export default function TIL() {
   }, 300);
 
   const onClickSearch = () => {
-    getTilList(page, inputs.search);
+    setPage(1);
+    getTilList(1, inputs.search);
   };
 
   const onClickSearchImg = () => {

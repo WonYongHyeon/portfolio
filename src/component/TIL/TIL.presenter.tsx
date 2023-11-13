@@ -40,6 +40,11 @@ export default function TILUI(props: Props) {
             );
           })}
       </S.ListWrapper>
+      {props.tilList.length !== 0 || (
+        <S.NoList>
+          <p>검색 결과가 없습니다.</p>
+        </S.NoList>
+      )}
       <S.PaginationSearchWrapper>
         <S.PaginationWrapper>
           {new Array(props.pageLength).fill(1).map((_, idx) => {
@@ -49,8 +54,6 @@ export default function TILUI(props: Props) {
               </S.Page>
             );
           })}
-          {/* <S.Page onClick={props.onClickPage}>1</S.Page> */}
-          {/* <S.Page onClick={props.onClickPage}>2</S.Page> */}
         </S.PaginationWrapper>
         <S.SearchWrapper>
           {props.searchVisible && (

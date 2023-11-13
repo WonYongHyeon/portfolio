@@ -32,6 +32,16 @@ export const List = styled.div`
   }
 `;
 
+export const NoList = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 20rem;
+  font-size: 5rem;
+  color: #1b1b19;
+`;
+
 export const DivideLine = styled.div`
   margin: 1rem 0;
   background-color: #938f87;

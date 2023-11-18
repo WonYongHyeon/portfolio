@@ -8,6 +8,7 @@ export default function TIL() {
   const [pageLength, setPageLength] = useState(0);
   const [tilList, setTilList] = useState(
     Array<{
+      id: string;
       order: string;
       title: string;
       link: string;

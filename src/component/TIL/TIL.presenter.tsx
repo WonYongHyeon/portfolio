@@ -6,6 +6,7 @@ import Registration from "../../assets/writeIcon.png";
 
 interface Props {
   tilList: Array<{
+    id: string;
     order: string;
     title: string;
     link: string;

@@ -1,8 +1,10 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import * as S from "./TIL.styles";
 import { ChangeEventHandler, FormEvent } from "react";
 import Lens from "../../assets/lens.svg";
 import Registration from "../../assets/writeIcon.png";
+import Delete from "../../assets/delete.png";
+import ListDelete from "../../assets/delete_x.png";
 
 interface Props {
   tilList: Array<{
@@ -13,11 +15,15 @@ interface Props {
   }>;
   searchVisible: boolean;
   pageLength: number;
+  activationDelete: boolean;
 
   onChange: ChangeEventHandler<HTMLInputElement>;
   onClickSearch: () => void;
   onClickSearchImg: () => void;
   onClickPage: (event) => void;
+  onClickDeleteActivation: () => void;
+  onClickList: (event) => void;
+
   submitHandler: (event: FormEvent<HTMLFormElement>) => void;
 }
 
@@ -28,15 +34,15 @@ export default function TILUI(props: Props) {
         {props.tilList &&
           props.tilList.map((el, idx) => {
             return (
-              <S.List key={idx}>
-                <Link
-                  to={el.link}
-                  style={{ textDecoration: "none", color: "black" }}
-                >
+              <S.List key={idx} onClick={props.onClickList} id={el.id}>
+                <S.OrderWrapper>
                   <p>{el.order}</p>
-                  <S.DivideLine />
-                  <p>{el.title}</p>
-                </Link>
+                  {props.activationDelete && (
+                    <S.ListDeleteButton src={ListDelete} />
+                  )}
+                </S.OrderWrapper>
+                <S.DivideLine />
+                <p>{el.title}</p>
               </S.List>
             );
           })}
@@ -73,6 +79,7 @@ export default function TILUI(props: Props) {
           <a href="/TIL/registration">
             <S.Img src={Registration}></S.Img>
           </a>
+          <S.Img src={Delete} onClick={props.onClickDeleteActivation}></S.Img>
         </S.SearchWrapper>
       </S.PaginationSearchWrapper>
     </S.Body>

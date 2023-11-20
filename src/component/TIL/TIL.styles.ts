@@ -24,11 +24,12 @@ export const List = styled.div`
   width: 200px;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  /* gap: 2rem; */
   :hover {
-    color: blueviolet;
+    /* color: blueviolet; */
     transform: scale(1.1);
     transition-duration: 0.5s;
+    cursor: pointer;
   }
 `;
 
@@ -40,6 +41,24 @@ export const NoList = styled.div`
   min-height: 20rem;
   font-size: 5rem;
   color: #1b1b19;
+`;
+
+export const OrderWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+`;
+
+export const ListDeleteButton = styled.img`
+  width: 2rem;
+  height: 2rem;
+
+  :hover {
+    color: blueviolet;
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+  }
 `;
 
 export const DivideLine = styled.div`

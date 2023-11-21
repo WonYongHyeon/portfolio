@@ -82,9 +82,6 @@ export default function TIL() {
    * activationDelete === false TIL로 이동
    */
   const onClickList = (id: string, link: string) => {
-    // console.log(event.currentTarget);
-    // const id = event.currentTarget.id;
-
     if (!activationDelete) {
       window.location.href = link;
     } else {
@@ -95,10 +92,10 @@ export default function TIL() {
   /** 리스트 삭제 이벤트 */
   const listDelete = (id: string) => {
     axios
-      .delete("http://localhost:3002/TIL?id=" + id)
+      .delete("http://localhost:3002/TIL?id=" + id + "&page=" + page)
       .then(function (response) {
-        console.log(response);
-        getTilList(1, "");
+        setTilList(response.data.tilList);
+        setPageLength(response.data.pageLength);
       })
       .catch(function (error) {
         console.log(error);

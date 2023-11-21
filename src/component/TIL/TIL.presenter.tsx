@@ -22,7 +22,7 @@ interface Props {
   onClickSearchImg: () => void;
   onClickPage: (event) => void;
   onClickDeleteActivation: () => void;
-  onClickList: (event) => void;
+  onClickList: (id, link) => void;
 
   submitHandler: (event: FormEvent<HTMLFormElement>) => void;
 }
@@ -34,7 +34,10 @@ export default function TILUI(props: Props) {
         {props.tilList &&
           props.tilList.map((el, idx) => {
             return (
-              <S.List key={idx} onClick={props.onClickList} id={el.id}>
+              <S.List
+                key={el.id}
+                onClick={() => props.onClickList(el.id, el.link)}
+              >
                 <S.OrderWrapper>
                   <p>{el.order}</p>
                   {props.activationDelete && (

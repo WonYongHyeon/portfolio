@@ -2,11 +2,8 @@ import axios from "axios";
 import TILUI from "./TIL.presenter";
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { debounce } from "lodash";
-// import { useNavigate } from "react-router-dom";
 
 export default function TIL() {
-  // const navigate = useNavigate();
-
   const [page, setPage] = useState<number>(1);
   const [pageLength, setPageLength] = useState(0);
   const [tilList, setTilList] = useState(
@@ -84,14 +81,14 @@ export default function TIL() {
    * activationDelete === true  리스트 삭제
    * activationDelete === false TIL로 이동
    */
-  const onClickList = (event) => {
-    console.log(event);
-    const link = event.currentTarget.id;
+  const onClickList = (id: string, link: string) => {
+    // console.log(event.currentTarget);
+    // const id = event.currentTarget.id;
 
     if (!activationDelete) {
-      // window.location.href = link
+      window.location.href = link;
     } else {
-      listDelete(link);
+      listDelete(id);
     }
   };
 
@@ -101,6 +98,7 @@ export default function TIL() {
       .delete("http://localhost:3002/TIL?id=" + id)
       .then(function (response) {
         console.log(response);
+        getTilList(1, "");
       })
       .catch(function (error) {
         console.log(error);

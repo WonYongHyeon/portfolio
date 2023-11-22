@@ -1,5 +1,10 @@
 import styled from "@emotion/styled";
 
+interface PageProps {
+  page: number;
+  idx: number;
+}
+
 export const Body = styled.div`
   padding: 5rem;
   box-sizing: border-box;
@@ -24,6 +29,7 @@ export const List = styled.div`
   width: 200px;
   display: flex;
   flex-direction: column;
+
   /* gap: 2rem; */
   :hover {
     /* color: blueviolet; */
@@ -84,8 +90,12 @@ export const PaginationWrapper = styled.ul`
 `;
 
 export const Page = styled.ul`
+  font-weight: ${(props: PageProps) =>
+    props.idx + 1 === props.page ? "bold" : "normal"};
+
   :hover {
     cursor: pointer;
+    transform: scale(1.3);
   }
 `;
 

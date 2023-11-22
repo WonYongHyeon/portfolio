@@ -52,7 +52,7 @@ export default function TIL() {
 
   /** Pagination 클릭 이벤트 */
   const onClickPage = (event) => {
-    const selectedPage = event.currentTarget.textContent;
+    const selectedPage = Number(event.currentTarget.textContent);
 
     setPage(selectedPage);
     getTilList(selectedPage, inputs.search);
@@ -110,6 +110,7 @@ export default function TIL() {
 
   return (
     <TILUI
+      page={page}
       tilList={tilList}
       searchVisible={searchVisible}
       pageLength={pageLength}

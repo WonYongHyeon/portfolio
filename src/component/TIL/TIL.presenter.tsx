@@ -7,6 +7,7 @@ import Delete from "../../assets/delete.png";
 import ListDelete from "../../assets/delete_x.png";
 
 interface Props {
+  page: number;
   tilList: Array<{
     id: string;
     order: string;
@@ -59,7 +60,12 @@ export default function TILUI(props: Props) {
         <S.PaginationWrapper>
           {new Array(props.pageLength).fill(1).map((_, idx) => {
             return (
-              <S.Page key={idx} onClick={props.onClickPage}>
+              <S.Page
+                key={idx}
+                onClick={props.onClickPage}
+                page={props.page}
+                idx={idx}
+              >
                 {idx + 1}
               </S.Page>
             );

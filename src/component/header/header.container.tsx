@@ -1,10 +1,16 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import HeaderUI from "./header.presenter";
 import { throttle } from "lodash";
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
+  const navigate = useNavigate();
   const [visible, setVisible] = useState(true);
   const beforeScrollY = useRef(0);
+
+  const onClickLink = (link: string) => {
+    navigate(link);
+  };
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -28,5 +34,5 @@ export default function Header() {
     [beforeScrollY]
   );
 
-  return <HeaderUI visible={visible}></HeaderUI>;
+  return <HeaderUI visible={visible} onClickLink={onClickLink}></HeaderUI>;
 }

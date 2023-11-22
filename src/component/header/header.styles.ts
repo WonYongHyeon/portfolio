@@ -48,6 +48,8 @@ export const Logo = styled.h1`
   align-items: flex-end;
   padding-bottom: 0.5rem;
   font-weight: 700;
+
+  cursor: pointer;
 `;
 
 export const HeaderLinkWrapper = styled.ul`

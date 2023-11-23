@@ -15,6 +15,7 @@ interface Props {
     desc: string;
     link: string;
   }[];
+  onClickLink: (event) => void;
 }
 
 export default function IntroduceUI(props: Props) {
@@ -48,7 +49,7 @@ export default function IntroduceUI(props: Props) {
               <S.IntroWrapper key={index}>
                 <S.SubTitle>{el.title}</S.SubTitle>
                 <S.etcDesc>{el.desc}</S.etcDesc>
-                <S.Desc>{el.link}</S.Desc>
+                <S.etcLink onClick={props.onClickLink}>{el.link}</S.etcLink>
               </S.IntroWrapper>
             );
           })}

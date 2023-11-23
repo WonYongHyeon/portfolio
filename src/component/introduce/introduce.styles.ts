@@ -1,7 +1,11 @@
 import styled from "@emotion/styled";
 
 export const Body = styled.div`
-  padding: 5rem auto;
+  padding: 3rem auto;
+
+  @media (max-width: 768px) {
+    padding-top: 3rem;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -10,8 +14,18 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   gap: 7rem;
-  padding: 5rem;
+  padding: 4rem;
+
+  @media (max-width: 600px) {
+    padding: 1rem;
+    padding-top: 0rem;
+  }
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+    padding-top: 0rem;
+  }
 `;
+
 export const IntroWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -50,4 +64,17 @@ export const etcDesc = styled.p`
   white-space: pre-wrap;
   line-height: 2rem;
   margin-left: 1.7rem;
+`;
+
+export const etcLink = styled.p`
+  width: 100%;
+  font-size: 1.1rem;
+  white-space: pre-wrap;
+  line-height: 2rem;
+  margin-left: 1.7rem;
+
+  :hover {
+    cursor: pointer;
+    font-weight: bold;
+  }
 `;

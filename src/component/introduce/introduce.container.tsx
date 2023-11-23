@@ -66,11 +66,17 @@ const etcData = [
 ];
 
 export default function Introduce() {
+  const onClickLink = (event) => {
+    console.log(event.currentTarget.innerText);
+    window.location.href = event.currentTarget.innerText;
+  };
+
   return (
     <IntroduceUI
       data={data}
       aboutData={aboutData}
       etcData={etcData}
+      onClickLink={onClickLink}
     ></IntroduceUI>
   );
 }

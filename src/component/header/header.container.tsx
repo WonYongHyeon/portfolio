@@ -24,7 +24,7 @@ export default function Header() {
     () =>
       throttle(() => {
         const currentScrollY = window.scrollY;
-        if (beforeScrollY.current < currentScrollY && currentScrollY > 80) {
+        if (beforeScrollY.current < currentScrollY && currentScrollY > 50) {
           setVisible(false);
         } else {
           setVisible(true);

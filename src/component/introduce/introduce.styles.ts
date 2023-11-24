@@ -15,6 +15,7 @@ export const Wrapper = styled.div`
   justify-content: center;
   gap: 7rem;
   padding: 4rem;
+  /* width: 100%; */
 
   @media (max-width: 600px) {
     padding: 1rem;
@@ -44,16 +45,15 @@ export const Title = styled.h1`
 export const SubTitle = styled.h2`
   width: 100%;
   font-size: 1.5rem;
-  margin: 1rem 0;
+  margin: 1rem auto;
 `;
 
 export const Desc = styled.p`
   width: 100%;
   font-size: 1.1rem;
-  width: 100%;
   white-space: pre-wrap;
   line-height: 2rem;
-  margin-left: 1.7rem;
+  margin: 0 1.7rem;
   margin-bottom: 2rem;
 `;
 

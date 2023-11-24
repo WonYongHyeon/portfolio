@@ -11,28 +11,44 @@ export const Body = styled.div`
   display: flex;
   flex-direction: column;
   min-height: calc(100vh - 11rem);
+
+  @media (max-width: 900px) {
+    padding: 1.5rem;
+    padding-top: 5rem;
+  }
+
+  @media (max-width: 600px) {
+    padding: 1rem;
+    padding-top: 5rem;
+  }
 `;
 
 export const ListWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 4rem;
 
   font-size: 2rem;
   color: #1b1b19;
+
+  @media (max-width: 768px) {
+    gap: 4rem;
+    /* grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); */
+  }
+
+  @media (max-width: 600px) {
+  }
 `;
 
 export const List = styled.div`
   background-color: white;
   padding: 1rem;
   border-radius: 2rem;
-  width: 200px;
+  /* width: 100%; */
   display: flex;
   flex-direction: column;
 
-  /* gap: 2rem; */
   :hover {
-    /* color: blueviolet; */
     transform: scale(1.1);
     transition-duration: 0.5s;
     cursor: pointer;

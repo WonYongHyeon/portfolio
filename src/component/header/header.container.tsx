@@ -5,20 +5,19 @@ import { useNavigate } from "react-router-dom";
 
 export default function Header() {
   const navigate = useNavigate();
-  const [visible, setVisible] = useState(true);
   const beforeScrollY = useRef(0);
 
+  const [visible, setVisible] = useState(true);
+  const [menuVisible, setMenuVisible] = useState(false);
+
   const onClickLink = (link: string) => {
+    setMenuVisible(false);
     navigate(link);
   };
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const onClickMenu = () => {
+    setMenuVisible((prev) => !prev);
+  };
 
   const handleScroll = useMemo(
     () =>
@@ -34,5 +33,20 @@ export default function Header() {
     [beforeScrollY]
   );
 
-  return <HeaderUI visible={visible} onClickLink={onClickLink}></HeaderUI>;
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  return (
+    <HeaderUI
+      visible={visible}
+      menuVisible={menuVisible}
+      onClickLink={onClickLink}
+      onClickMenu={onClickMenu}
+    ></HeaderUI>
+  );
 }

@@ -85,7 +85,6 @@ export const ProgressArea = styled.div`
   background: #e1e1e1;
   border: 3px solid #b1b1b1;
   margin: 2rem auto;
-  position: relative;
 `;
 
 // keyframes

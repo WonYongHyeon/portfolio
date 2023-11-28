@@ -36,7 +36,6 @@ export const Header = styled.header`
   display: flex;
   justify-content: space-between;
   position: fixed;
-  /* position: relative; */
   animation: ${(props: Props) => (props.visible ? visible : unVisible)} 0.8s;
   animation-fill-mode: forwards;
   background-color: #c7c2b8;
@@ -79,19 +78,9 @@ export const HeaderLinkWrapper = styled.ul`
   }
 `;
 
-const linkScale = keyframes`
-  from {
-    scale: 1;
-  }
-  to {
-    scale: 1.1;
-  }
-`;
-
 export const HeaderLinkList = styled.li`
   :hover {
     color: blueviolet;
-    /* transform: ${linkScale} 1s; */
     transform: scale(1.1);
     transition-duration: 0.5s;
   }
@@ -126,7 +115,7 @@ interface MenuProps {
 }
 
 export const MenuWrapper = styled.div`
-  width: 40vw;
+  width: 20rem;
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -138,7 +127,6 @@ export const MenuWrapper = styled.div`
   background-color: #2a2a2b;
   transition: all 1s ease-out;
   visibility: ${visible ? "visible" : "hidden"};
-  z-index: 100000;
   animation: ${(props: MenuProps) => (props.menuVisible ? fadeIn : fadeOut)}
     0.7s forwards ease-out;
 `;

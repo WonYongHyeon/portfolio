@@ -9,6 +9,7 @@ export default function Header() {
 
   const [visible, setVisible] = useState(true);
   const [menuVisible, setMenuVisible] = useState(false);
+  const [menuActivation, setMenuActivation] = useState(false);
 
   const onClickLink = (link: string) => {
     setMenuVisible(false);
@@ -16,6 +17,7 @@ export default function Header() {
   };
 
   const onClickMenu = () => {
+    setMenuActivation(true);
     setMenuVisible((prev) => !prev);
   };
 
@@ -45,6 +47,7 @@ export default function Header() {
     <HeaderUI
       visible={visible}
       menuVisible={menuVisible}
+      menuActivation={menuActivation}
       onClickLink={onClickLink}
       onClickMenu={onClickMenu}
     ></HeaderUI>

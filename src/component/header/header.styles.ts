@@ -112,12 +112,14 @@ const fadeOut = keyframes`
 
 interface MenuProps {
   menuVisible: boolean;
+  menuActivation: boolean;
 }
 
 export const MenuWrapper = styled.div`
   width: 20rem;
   position: fixed;
-  display: flex;
+  /* display: flex; */
+  display: ${(props: MenuProps) => (props.menuActivation ? "flex" : "none")};
   flex-direction: column;
   height: 100vh;
   right: -20rem;
@@ -126,9 +128,8 @@ export const MenuWrapper = styled.div`
   text-align: right;
   background-color: #2a2a2b;
   transition: all 1s ease-out;
-  visibility: ${visible ? "visible" : "hidden"};
-  animation: ${(props: MenuProps) => (props.menuVisible ? fadeIn : fadeOut)}
-    0.7s forwards ease-out;
+  animation: ${(props: MenuProps) => (props.menuVisible ? fadeIn : fadeOut)} 1s
+    forwards ease-out;
 `;
 
 export const MenuCancelWrapper = styled.div`

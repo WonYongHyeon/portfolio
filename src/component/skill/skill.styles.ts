@@ -8,6 +8,9 @@ interface Props {
 export const Body = styled.div`
   padding: 5rem auto;
   height: calc(100vh - 11rem);
+  @media (max-width: 950px) {
+    height: 100%;
+  }
 `;
 
 export const RotateCanvasWrapper = styled.div`
@@ -16,7 +19,9 @@ export const RotateCanvasWrapper = styled.div`
   justify-content: center;
   gap: 10vw;
   padding: 10rem 5rem;
-  /* height: 100%; */
+  @media (max-width: 950px) {
+    flex-direction: column;
+  }
 `;
 
 export const Canvas = styled.canvas`
@@ -32,6 +37,9 @@ export const DescWrapper = styled.aside`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 950px) {
+    width: 70vmin;
+  }
 `;
 
 export const TitleWrapper = styled.div`

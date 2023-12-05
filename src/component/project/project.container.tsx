@@ -17,7 +17,7 @@ export default function Project() {
 
   const opts: YouTubeProps["opts"] = {
     height: "390",
-    width: "640",
+    width: "100%",
   };
 
   useEffect(() => {
@@ -25,7 +25,6 @@ export default function Project() {
       .get("http://localhost:3002/project")
       .then((res) => {
         setProjectData(res.data);
-        console.log(res.data);
       })
       .catch(function (error) {
         // handle error

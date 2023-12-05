@@ -27,11 +27,13 @@ export default function ProjectUI(props: Props) {
             <S.ProjectSkill>{el.skill}</S.ProjectSkill>
             <S.ProjectDone>{`${el.done}`}</S.ProjectDone>
             {el.category === "Team Project" && (
-              <YouTube
-                videoId={el.youtubeId}
-                opts={props.opts}
-                style={{ padding: "2rem 5rem 10rem 5rem" }}
-              />
+              <S.ProjectYoutubeWrapper>
+                <YouTube
+                  videoId={el.youtubeId}
+                  opts={props.opts}
+                  // style={{ padding: "2rem 5rem 10rem 5rem" }}
+                />
+              </S.ProjectYoutubeWrapper>
             )}
           </S.ProjectWrapper>
         );

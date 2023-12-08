@@ -40,12 +40,14 @@ export const Title = styled.h1`
   border-bottom: 1px solid #1b1b1b;
   width: 100%;
   padding-bottom: 1rem;
+  line-height: 2rem;
 `;
 
 export const SubTitle = styled.h2`
   width: 100%;
   font-size: 1.5rem;
-  margin: 1rem auto;
+  padding: 1rem 0;
+  line-height: 2.5rem;
 `;
 
 export const Desc = styled.p`
@@ -53,8 +55,8 @@ export const Desc = styled.p`
   font-size: 1.1rem;
   white-space: pre-wrap;
   line-height: 2rem;
-  margin: 0 1.7rem;
-  margin-bottom: 2rem;
+  padding: 0 1.7rem;
+  padding-bottom: 4rem;
 `;
 
 export const etcDesc = styled.p`
@@ -63,15 +65,16 @@ export const etcDesc = styled.p`
   width: 100%;
   white-space: pre-wrap;
   line-height: 2rem;
-  margin-left: 1.7rem;
+  padding: 0 1.7rem;
 `;
 
 export const etcLink = styled.p`
   width: 100%;
   font-size: 1.1rem;
   white-space: pre-wrap;
+  word-break: break-all;
   line-height: 2rem;
-  margin-left: 1.7rem;
+  padding: 0 1.7rem;
 
   :hover {
     cursor: pointer;

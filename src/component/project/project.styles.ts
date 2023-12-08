@@ -19,6 +19,10 @@ export const ProjectCategory = styled.h1`
   border-bottom: 1px solid #111;
   padding: 1rem;
   margin-bottom: 1rem;
+
+  @media (max-width: 650px) {
+    padding-left: 0.5rem;
+  }
 `;
 
 export const ProjectTitleDescWrapper = styled.div`
@@ -31,6 +35,7 @@ export const ProjectTitleDescWrapper = styled.div`
   @media (max-width: 650px) {
     flex-direction: column;
     gap: 1rem;
+    padding-left: 1rem;
   }
 `;
 
@@ -62,11 +67,15 @@ export const ProjectDone = styled.p`
 `;
 
 export const ProjectYoutubeWrapper = styled.div`
-  width: 70vw;
   height: 390px;
+  /* width: 900px; */
   padding: 2rem 0rem 10rem 5rem;
 
   @media (max-width: 800px) {
-    width: calc(75vw - 20px);
+    padding: 2rem;
+    width: auto;
+  }
+  @media (max-width: 650px) {
+    padding: 2rem 1rem;
   }
 `;

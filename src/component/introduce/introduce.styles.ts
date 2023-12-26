@@ -15,7 +15,6 @@ export const Wrapper = styled.div`
   justify-content: center;
   gap: 7rem;
   padding: 4rem;
-  /* width: 100%; */
 
   @media (max-width: 600px) {
     padding: 1rem;
@@ -56,10 +55,18 @@ export const Desc = styled.p`
   white-space: pre-wrap;
   line-height: 2rem;
   padding: 0 1.7rem;
+`;
+
+export const AboutDesc = styled.p`
+  width: 100%;
+  font-size: 1.1rem;
+  white-space: pre-wrap;
+  line-height: 2rem;
+  padding: 0 1.7rem;
   padding-bottom: 4rem;
 `;
 
-export const etcDesc = styled.p`
+export const EtcDesc = styled.p`
   width: 100%;
   font-size: 1.1rem;
   width: 100%;
@@ -68,7 +75,7 @@ export const etcDesc = styled.p`
   padding: 0 1.7rem;
 `;
 
-export const etcLink = styled.p`
+export const EtcLink = styled.p`
   width: 100%;
   font-size: 1.1rem;
   white-space: pre-wrap;

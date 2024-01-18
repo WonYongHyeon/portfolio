@@ -1,11 +1,9 @@
 import { ChangeEvent, useState } from "react";
 import RegistrationUI from "./registration.presenter";
 import { debounce } from "lodash";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export default function Registration() {
-  const navigate = useNavigate();
   const [inputs, setInputs] = useState({
     title: "",
     url: "",
@@ -25,7 +23,7 @@ export default function Registration() {
   }, 300);
 
   const onClickCancel = () => {
-    navigate(-1);
+    window.location.href = "http://localhost:3000/TIL";
   };
 
   const onClickRegistration = () => {
@@ -34,8 +32,7 @@ export default function Registration() {
       .then(function (res) {
         console.log(res.data);
         if (res.data.success === true) {
-          console.log("성공");
-          navigate("/TIL");
+          window.location.href = "http://localhost:3000/TIL";
         } else if (res.data.success === false) {
           console.log("실패");
         }

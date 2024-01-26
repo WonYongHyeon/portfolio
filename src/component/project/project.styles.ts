@@ -1,10 +1,10 @@
 import styled from "@emotion/styled";
 
 export const Body = styled.div`
-  padding: 5rem 4rem;
+  padding: 0rem 4rem 5rem 4rem;
 
   @media (max-width: 800px) {
-    padding: 5rem 1rem;
+    padding: 0rem 1rem 5rem 1rem;
   }
 `;
 
@@ -18,6 +18,7 @@ export const ProjectCategory = styled.h1`
   font-size: 3rem;
   border-bottom: 1px solid #111;
   padding: 1rem;
+  padding-top: 5rem;
   margin-bottom: 1rem;
 
   @media (max-width: 650px) {
@@ -69,10 +70,10 @@ export const ProjectDone = styled.p`
 export const ProjectYoutubeWrapper = styled.div`
   height: 390px;
   /* width: 900px; */
-  padding: 2rem 0rem 10rem 5rem;
+  padding: 0rem 0rem 10rem 5rem;
 
   @media (max-width: 800px) {
-    padding: 2rem;
+    padding: 0rem 0rem 2rem 2rem;
     width: auto;
   }
   @media (max-width: 650px) {

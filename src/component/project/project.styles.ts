@@ -70,7 +70,8 @@ export const ProjectDone = styled.p`
 export const ProjectYoutubeWrapper = styled.div`
   height: 390px;
   /* width: 900px; */
-  padding: 0rem 0rem 10rem 5rem;
+  /* padding: 0rem 0rem 20rem 5rem; */
+  padding: 0rem 0rem 0rem 5rem;
 
   @media (max-width: 800px) {
     padding: 0rem 0rem 2rem 2rem;

@@ -58,6 +58,19 @@ export default function TIL() {
     getTilList(selectedPage, inputs.search);
   };
 
+  const onClickPageArrow = (direction: number) => {
+    const movePage = page + direction;
+
+    if (page === 1 && direction === -1) {
+      return;
+    } else if (page === pageLength && direction === 1) {
+      return;
+    }
+
+    setPage(movePage);
+    getTilList(movePage, inputs.search);
+  };
+
   /** 서버에서 TIL 리스트를 받아오는 함수 */
   const getTilList = (page: number, search: string) => {
     axios
@@ -119,6 +132,7 @@ export default function TIL() {
       onClickSearch={onClickSearch}
       onClickSearchImg={onClickSearchImg}
       onClickPage={onClickPage}
+      onClickPageArrow={onClickPageArrow}
       onClickDeleteActivation={onClickDeleteActivation}
       onClickList={onClickList}
       submitHandler={submitHandler}

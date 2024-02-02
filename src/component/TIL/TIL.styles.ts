@@ -114,6 +114,13 @@ export const Page = styled.ul`
     transform: scale(1.3);
   }
 `;
+export const PageArrow = styled.ul`
+  :hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    font-weight: bold;
+  }
+`;
 
 export const SearchWrapper = styled.div`
   display: flex;

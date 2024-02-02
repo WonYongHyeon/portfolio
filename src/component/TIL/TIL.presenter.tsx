@@ -22,6 +22,7 @@ interface Props {
   onClickSearch: () => void;
   onClickSearchImg: () => void;
   onClickPage: (event) => void;
+  onClickPageArrow: (direction: number) => void;
   onClickDeleteActivation: () => void;
   onClickList: (id, link) => void;
 
@@ -58,6 +59,9 @@ export default function TILUI(props: Props) {
       )}
       <S.PaginationSearchWrapper>
         <S.PaginationWrapper>
+          <S.PageArrow onClick={() => props.onClickPageArrow(-1)}>
+            &lt;
+          </S.PageArrow>
           {new Array(props.pageLength).fill(1).map((_, idx) => {
             return (
               <S.Page
@@ -70,6 +74,9 @@ export default function TILUI(props: Props) {
               </S.Page>
             );
           })}
+          <S.PageArrow onClick={() => props.onClickPageArrow(1)}>
+            &gt;
+          </S.PageArrow>
         </S.PaginationWrapper>
         <S.SearchWrapper>
           {props.searchVisible && (

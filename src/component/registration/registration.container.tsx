@@ -26,8 +26,8 @@ export default function Registration() {
     window.location.href = "http://localhost:3000/TIL";
   };
 
-  const onClickRegistration = () => {
-    axios
+  const onClickRegistration = async () => {
+    await axios
       .post("http://localhost:3002/TIL/registration", inputs)
       .then(function (res) {
         console.log(res.data);

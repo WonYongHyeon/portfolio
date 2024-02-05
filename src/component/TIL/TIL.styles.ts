@@ -44,7 +44,7 @@ export const List = styled.div`
   background-color: white;
   padding: 1rem;
   border-radius: 2rem;
-  /* width: 100%; */
+  max-width: 200px;
   display: flex;
   flex-direction: column;
 

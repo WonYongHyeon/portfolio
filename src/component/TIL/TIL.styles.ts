@@ -25,26 +25,19 @@ export const Body = styled.div`
 
 export const ListWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  justify-items: center;
   gap: 4rem;
 
   font-size: 2rem;
   color: #1b1b19;
-
-  @media (max-width: 768px) {
-    gap: 4rem;
-    /* grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); */
-  }
-
-  @media (max-width: 600px) {
-  }
 `;
 
 export const List = styled.div`
   background-color: white;
   padding: 1rem;
   border-radius: 2rem;
-  max-width: 200px;
+  width: 250px;
   display: flex;
   flex-direction: column;
 

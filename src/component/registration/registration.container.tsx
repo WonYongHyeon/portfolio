@@ -24,6 +24,7 @@ export default function Registration() {
 
   const onClickCancel = () => {
     window.location.href = "http://localhost:3000/TIL";
+    // window.location.href = "https://yonghyeon.site/TIL";
   };
 
   const onClickRegistration = async () => {

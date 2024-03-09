@@ -52,6 +52,13 @@
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
     "@types/lodash": "^4.14.200",
-    "docker-compose": "^0.24.2"
-  }
+    "docker-compose": "^0.24.2",
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4"
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
